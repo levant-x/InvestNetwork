@@ -1,12 +1,11 @@
 import { StyleSheet } from "react-native";
 
-const backgroundColor = 'blue';
 
 export const stylesCommon = StyleSheet.create({
     vertical: {
         flexDirection: 'column',
         alignItems: 'stretch',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
     },
 
     horizontal: {
@@ -17,15 +16,14 @@ export const stylesCommon = StyleSheet.create({
 
     container: {
         flex: 1,
+        marginTop: 50,
         backgroundColor: '#fff', // fff
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        justifyContent: 'space-between'
     },
 
     page: {
         justifyContent: 'flex-start',
     },
-
-    navbar: {
-        backgroundColor,
-        height: 80,
-    }
 });

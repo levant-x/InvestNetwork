@@ -1,18 +1,31 @@
 import React from "react";
-import { Image, View } from "react-native";
-import Svg, { Rect } from "react-native-svg";
-import SvgUri from "react-native-svg-uri";
-import { stylesCommon } from "../styles";
+import { Image, StyleSheet, View } from "react-native";
+import { BG_COLOR_PRIM } from "../consts";
 
-const size = {
-    width: 80,
-    height: 80,
-}
 
-export default function Narbar() {
+export default function Navbar() {
     return (
-        <View style={[stylesCommon.navbar, stylesCommon.horizontal]}>
-            <SvgUri {...size} source={require('../img/icon-nav-profile.svg')} />
+        <View style={styles.navbar}>
+            <Image style={styles.navicon} source={require('../img/page-profile.png')} />
+            <Image style={styles.navicon} source={require('../img/page-tools.png')} />
+            <Image style={styles.navicon} source={require('../img/page-news.png')} />
+            <Image style={styles.navicon} source={require('../img/page-tutorial.png')} />
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    navbar: {
+        backgroundColor: BG_COLOR_PRIM,
+        height: 70,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+    },
+
+    navicon: {
+        width: 50,
+        height: 50,
+        padding: 10,
+    }
+});
