@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import SvgUri from "react-native-svg-uri";
-import { BG_COLOR_SEC } from "../consts";
+import { BG_COLOR_PRIM, BG_COLOR_SEC } from "../consts";
 import { stylesCommon } from "../styles";
 
 
@@ -22,7 +22,10 @@ export default function ProfilePage() {
             </View>    
             <View style={styles.postsHeader}>
                 <Text style={[styles.header, {textAlign: 'center'}]}>Мои публикации</Text>
-                <TextInput placeholder={'Новая публикация'} />
+                <View style={styles.inputBlock}>
+                    <Image source={require('../img/edit.png')} style={styles.inputIcon} />
+                    <TextInput placeholder={'Новая публикация'} style={styles.input} />
+                </View>
             </View>    
         </View>
     )
@@ -86,6 +89,31 @@ const styles = StyleSheet.create({
     },
 
     postsHeader: {
-        marginTop: 15,        
+        marginTop: 15,   
+    },
+
+    inputBlock: {
+        flexDirection: 'row',
+        backgroundColor: BG_COLOR_PRIM,
+        borderRadius: 10,
+        marginVertical: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+    },
+
+    inputIcon: {
+        width: 25,
+        height: 25,
+    },
+
+    input: {
+        fontSize: 15,
+        backgroundColor: BG_COLOR_SEC,
+        position: 'absolute',
+        borderRadius: 5,
+        right: 15,
+        top: 10,
+        bottom: 10,
+        left: 60
     },
 })
